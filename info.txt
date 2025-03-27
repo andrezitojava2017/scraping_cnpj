@@ -1,0 +1,19 @@
+
+*** XML dividos por dias ***
+https://casadosdados.com.br/sitemapsd
+
+
+*** Lista XML com empresas abertas no dia selecionado **
+https://casadosdados.com.br/sitemapsd/2025-02-22
+
+*** Dados para recuperar ***
+
+-razão social
+-cnpj
+-data abertura
+-municipio
+-estado
+-e-mail
+-telefone
+-CNAE principal
+
