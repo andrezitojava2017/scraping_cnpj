@@ -72,3 +72,42 @@ export const createFileListDate = async (list) =>{
     throw error
   }
 }
+
+export const creatFileListEmployeOfDate = async (linkList, dateDefined) =>{
+  try {
+
+    await fs.appendFile(`./${dateDefined}.txt`, `${linkList} \n`, (err)=>{
+      if(err) throw err
+      console.log('******************   Arquivo com vetor criado!!!!  ********************')
+    });
+    
+  } catch (error) {
+    console.log('ocorreu um erro ao tentar salvar o arquivo', error)
+    throw error
+  }
+}
+
+export const updateFile = async (linkList, dateDefined) =>{
+  try {
+    for (const element of linkList) {
+      // Adiciona cada linha ao arquivo
+      await fs.appendFile(`./${dateDefined}.txt`, `${element}\n`);
+      console.log('****************** Arquivo atualizado! ********************');
+    }
+  } catch (error) {
+    console.error('Ocorreu um erro ao tentar salvar o arquivo:', error);
+    throw error;
+  }
+}
+
+export const getAllLines = async (dateDefined)=>{
+  try {
+    const line = await fs.readFile(`./${dateDefined}.txt`,{encoding:'utf8'})
+    const array = line.split('\n')
+    return array;
+    
+  } catch (error) {
+    console.log('Erro ao ler arquivo para fazer loop')
+    throw error
+  }
+}
